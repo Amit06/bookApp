@@ -49,13 +49,14 @@ angular.module('starter.controllers2', [])
               $auth.setToken(access_token);
               if (access_token)
               {
-        //  alert($auth.getToken());
+                //  alert($auth.getToken());
+                console.log($auth.getToken());
                 $scope.hide($ionicLoading);
                 $state.go('login');
               }
               else
                {
-                alert($auth.getToken());
+
                  $scope.hide($ionicLoading);
           //       alert("Problem Signing In !")
           $ionicPopup.alert({
@@ -68,8 +69,9 @@ angular.module('starter.controllers2', [])
           //$auth.setToken(response.config.data);
         }
         else {
+          console.log($scope.log);
+          console.log($auth.getToken());
           $scope.hide($ionicLoading);
-
           $state.go('login');
 
         }

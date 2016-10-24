@@ -53,8 +53,9 @@ angular.module('starter.controllers3', [])
 
       $scope.logout = function()
       {
-
+          console.log($auth.getToken());
           $auth.logout();
+          console.log($auth.getToken());
           $state.go('login');
       };
 

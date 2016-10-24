@@ -1,24 +1,33 @@
 <ion-view view-title="Buy" name="tab-buy">
+  <ion-header-bar class="bar bar-header bar-dark" align-title="center">
+
+
+<h1 class="title">AVAILABLE BOOKS</h1>
+<div class="buttons">
+  <button class="button button-clear icon ion-ios-close-empty button-small" ng-click="modal.hide()" style="position:relative;top:-3px;left:-4px">
+  </button>
+</div>
+  </ion-header-bar>
   <ion-content>
 
       <div class="list" >
-        <a class="item item-icon-left" href="http://sultan-chand.com/shop/?board=CBSE&class=XII&subject=Mathematics&btn=Search">
-          <i class="icon ion-email"></i>
+        <a class="item item-icon-left" ng-click="openLink('http://sultan-chand.com/shop/?board=CBSE&class=XII&subject=Mathematics&btn=Search')">
+          <i class="icon ion-email royal"></i>
           CBSE Class XII Mathematics
         </a>
 
-        <a class="item item-icon-left" href="http://sultan-chand.com/shop/?board=CBSE&class=XI&subject=Mathematics&btn=Search">
-          <i class="icon ion-email"></i>
+        <a class="item item-icon-left" ng-click="openLink('http://sultan-chand.com/shop/?board=CBSE&class=XI&subject=Mathematics&btn=Search')">
+          <i class="icon ion-email royal"></i>
           CBSE Class XI Mathematics
         </a>
 
-        <a class="item item-icon-left" href="http://sultan-chand.com/shop/?board=ISC&class=XII&subject=Mathematics&btn=Search">
-          <i class="icon ion-email"></i>
+        <a class="item item-icon-left" ng-click="openLink('http://sultan-chand.com/shop/?board=ISC&class=XII&subject=Mathematics&btn=Search')">
+          <i class="icon ion-email royal"></i>
           ISC Class XII Mathematics
         </a>
 
-        <a class="item item-icon-left" href="http://sultan-chand.com/shop/?board=ISC&class=XI&subject=Mathematics&btn=Search">
-          <i class="icon ion-email"></i>
+        <a class="item item-icon-left" ng-click="openLink('http://sultan-chand.com/shop/?board=ISC&class=XI&subject=Mathematics&btn=Search')">
+          <i class="icon ion-email royal"></i>
           ISC Class XI Mathematics
         </a>
 
