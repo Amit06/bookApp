@@ -1,13 +1,56 @@
 <ion-view view-title="Quick Links">
-  <ion-content>
-    <ion-list>
+  <ion-content class="has-footer">
 
-      <div class=" card" ng-repeat="link in links">
-                <div class="item ">
-                    <a href={{link[1]}}>{{link[0]}}</a>
-                </div>
-            </div>
 
-    </ion-list>
+      <div class="list" >
+
+        <a class="item item-icon-left" ng-click="openLink('http://guptabansal.com')">
+          <i class="icon ion-flag"></i>
+          Latest Updates
+        </a>
+
+        <a class="item item-icon-left" ng-click="openLink('http://guptabansal.com/publications.html')">
+          <i class="icon ion-ios-book"></i>
+          Publications
+        </a>
+
+        <a class="item item-icon-left" href="#">
+          <i class="icon ion-android-cart"></i>
+          Buy Online
+        </a>
+
+        <a class="item item-icon-left" ng-click="openLink('http://guptabansal.com/downloads.html')">
+          <i class="icon ion-android-download"></i>
+          Free Download
+        </a>
+
+        <a class="item item-icon-left" href="('http://guptabansal.com/brainteaser.html')">
+          <i class="icon ion-android-bulb"></i>
+          Brain Teaser
+        </a>
+
+        <a class="item item-icon-left" ng-click="openLink('https://www.facebook.com/guptabansalgroup')">
+          <i class="icon ion-social-facebook"></i>
+          Like Our Facebook Page
+        </a>
+
+        <a class="item item-icon-left" ng-click="openLink('http://guptabansal.blogspot.com')">
+          <i class="icon ion-social-rss"></i>
+          Read Our Blogs
+        </a>
+
+        <a class="item item-icon-left" ng-click="openLink('https://play.google.com/store/apps/details?id=com.piexsys.guptabansal.app')">
+          <i class="icon ion-star"></i>
+          Rate Our App
+        </a>
+
+        <a class="item item-icon-left" ng-click="openLink('http://guptabansal.com/contact.aspx')">
+          <i class="icon ion-email"></i>
+          Contact Us
+        </a>
+
+
+      </div>
+
   </ion-content>
 </ion-view>

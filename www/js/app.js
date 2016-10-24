@@ -5,14 +5,13 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic','ngCordova','starter.controllers', 'starter.services','satellizer'])
+angular.module('starter', ['ionic','ngCordova','starter.controllers1','starter.controllers2','starter.controllers3','starter.controllers4', 'starter.services','satellizer'])
 .config(function($authProvider) {
 
     $authProvider.facebook({
       clientId: '572778666263598'
     });
 
-    // Optional: For client-side use (Implicit Grant), set responseType to 'token' (default: 'code')
     $authProvider.facebook({
       clientId: '572778666263598',
       responseType: 'token'
@@ -31,6 +30,8 @@ angular.module('starter', ['ionic','ngCordova','starter.controllers', 'starter.s
       cordova.plugins.Keyboard.disableScroll(true);
 
     }
+
+});
     if (window.StatusBar) {
       // org.apache.cordova.statusbar required
       StatusBar.styleDefault();
@@ -41,7 +42,7 @@ angular.module('starter', ['ionic','ngCordova','starter.controllers', 'starter.s
               console.log(available);
             });
         }
-  });
+
 })
 
 .config(function($stateProvider, $urlRouterProvider,$ionicConfigProvider) {
@@ -64,6 +65,10 @@ angular.module('starter', ['ionic','ngCordova','starter.controllers', 'starter.s
   .state('signingoogle', {
   url: '/auth/google',
   templateUrl: 'templates/tabs.html'
+})
+.state('signinfb', {
+url: '/auth/facebook',
+templateUrl: 'templates/tabs.html'
 })
 
   // Each tab has its own nav history stack:

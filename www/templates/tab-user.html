@@ -1,6 +1,6 @@
 <ion-view view-title="User Profile" ng-init="init()">
-  <ion-content class="padding">
-    <div class=" card">
+  <ion-content class="padding has-footer">
+    <div ng-if="!isGoogle()" class=" card">
               <div class="item item-avatar">
                   <img ng-src="{{profileData.picture.data.url}}">
                   <b class="text-center">NAME</b><h2>{{profileData.name}}</h2>
@@ -13,6 +13,41 @@
 
 
           </div>
-          <button class="button button-dark button-full button-outline" ng-click="logout()">LOG OUT</button>
+          <div ng-if="isGoogle()" class="list card">
+            <div class="item item-avatar">
+                <img ng-src="{{param.google.image}}">
+                <b class="text-center">NAME</b><h2>{{param.google.first_name}} {{param.google.last_name}}</h2>
+
+            </div>
+            <a class="item item-icon-left">
+                <i class="icon ion-email"></i>
+                {{param.google.email}}
+            </a>
+
+
+    </div>
+
+    <div class="list list-inset">
+      <label class="item item-input">
+        <input type="tel" placeholder="Mobile Number">
+      </label>
+      <label class="item item-input">
+        <input type="text" placeholder="Institution Name">
+      </label>
+      <label class="item item-input">
+        <input type="text" placeholder="Institution Address">
+      </label>
+      </div>
+
+    <ion-list>
+    <ion-radio ng-model="choice" ng-value="'A'">Faculty</ion-radio>
+    <ion-radio ng-model="choice" ng-value="'B'">Student</ion-radio>
+  </ion-list>
+
+
+      <button class="button button-balanced button-outline button-block" ng-click="">Update</button>
+    <button class="button button-dark button-block button-outline" ng-click="logout()">Log Out</button>
+
+
   </ion-content>
 </ion-view>

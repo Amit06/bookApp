@@ -1,19 +1,35 @@
-<ion-view view-title="Your Files">
-  <ion-content>
+<ion-view view-title="QR Scanner" ng-init="init()">
+  <ion-content class="has-footer">
 
     <div class="card">
         <div class="item item-text-wrap">
-      <button class="button button-block button-outline button-calm"  ng-click="scanBarcode()">
-        SCAN TO ADD  NEW FILE
+      <button class="button button-block button-outline button-calm"  ng-click="scanBarcode()" ng-disabled="isDis">
+        {{scanValue}}
       </button>
+      <div class="progress sell_progress_bar" ng-show="isDis">
+    <div class="progress-bar" role="progressbar"  aria-valuenow="{{ upload_percentage }}" aria-valuemin="0" aria-valuemax="100" style="width:{{ upload_percentage }}%">
+        <span class="sr-only">100% Complete</span>
+    </div>
+</div>
+<button class="button button-block button-outline button-assertive"  ng-click="stopDownload()" ng-show="isDis">
+Cancel Download
+</button>
     </div>
 
-    <div class="card">
-  <div class="item item-text-wrap">
+    <div class="card list">
 
-    <h2 class="align-centre"><b> YOUR FILES </b></h2>
+      <div class="item item-divider">
+        <i class = "icon icon ion-android-folder-open"></i>&nbsp&nbspDownloaded Files
+      </div>
 
-    </div>
+      <ion-item class="item-icon-right" ng-repeat="file in dl">
+        {{$index+1}}. {{file.name}}
+        <div class="icon">
+               <a class="ion-ios-book-outline royal" ng-click="openPdf(file.nativeURL)"> </a>
+               &nbsp&nbsp&nbsp;
+               <a class="ion-ios-information-outline balanced" ng-click="getInfo(file.name)"></a>
+        </div>
+      </ion-item>
 
   </div>
 </div>
