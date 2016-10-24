@@ -1,0 +1,47 @@
+
+
+<ion-view view-title="Login" class="login" style="background-image:url('img/back2.png')" hide-nav-bar="true">
+  <ion-content class="has-footer" >
+
+      <div >
+        <img ng-src={{bd_src}} class='img-responsive' style="width:50%;height:50%;position:relative;left:23%;margin-top:75px" >
+      </div>
+      <div class="row">
+        <div class=" col-xs-offset-25 col">
+          <h5 style="text-align:center;color:#FFFFFF"> IN ASSOCIATION WITH </h3>
+        </div>
+      </div>
+      <div class="row">
+          <img ng-src={{logo2_src}} class='img-responsive' style="width:50%;height:50%;position:relative;left:29%">
+      </div>
+
+    </br>
+
+    <div ng-if="!isAuthenticated()" class="row responsive-sm" style="position:relative;left:12px">
+    <div class="col col-33 col-offset-20 social-buttons">
+      <a class="btn btn-block btn-sm btn-social btn-facebook" ng-click="authenticate('facebook')">
+        <span class="fa fa-facebook"></span>
+          Sign in using Facebook
+      </a>
+    </div>
+    <div class=" col col-33  social-buttons">
+      <a class="btn btn-block btn-sm btn-social btn-google" ng-click="authenticate('google')">
+        <span class="fa fa-google"></span>
+          Sign in using Google
+      </a>
+    </div>
+  </div>
+  <div ng-if="isAuthenticated()"  >
+<br>
+  <div class=" text-center" style="position:relative;left:-4px">
+    <a class="button  button-dark button-outline button-middle" href="#/tab/scanner" style="min-height:auto"><i class="icon dark ion-arrow-right-a placeholder-icon"></i></a>
+
+  </div>
+</div>
+
+
+
+
+  </ion-content>
+
+</ion-view>
