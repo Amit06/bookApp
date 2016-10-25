@@ -23,11 +23,9 @@ angular.module('starter.controllers2', [])
     //console.log(  $window.localStorage.getItem('key'));
     $scope.show($ionicLoading);
       $auth.authenticate(provider).then(function(response){
-      //  console.log(response.config.data.code);
+        //console.log(response.config.data.code);
         if (provider==='google')
         {
-
-
           var http=$http({
             url: 'https://www.googleapis.com/oauth2/v3/token',
             method: 'POST',
@@ -43,6 +41,8 @@ angular.module('starter.controllers2', [])
             });
           http.then(function (data) {
       //        alert(data);
+
+              console.log(data);
               var access_token = data.data.access_token;
               var expires_in = data.data.expires_in;
               expires_in = expires_in * 1 / (60 * 60);
@@ -69,8 +69,7 @@ angular.module('starter.controllers2', [])
           //$auth.setToken(response.config.data);
         }
         else {
-          console.log($scope.log);
-          console.log($auth.getToken());
+
           $scope.hide($ionicLoading);
           $state.go('login');
 
@@ -84,7 +83,7 @@ angular.module('starter.controllers2', [])
           title: 'Login failed!',
           template: 'Please check your credentials!'
       });
-        console.log(response);
+
   });
     };
 })
